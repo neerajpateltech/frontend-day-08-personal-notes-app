@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+        <aside class="sidebar">
+            <h2>Notes<span>.</span></h2>
+            <p class="sidebar-text">Your personal space</p>
+
+            <button class="new-note-btn" id="newNoteBtn">
+                + Create New Note
+            </button>
+
+            <div class="sidebar-bottom">
+                <p>Keep your ideas safe.</p>
+                <small>Personal Notes App</small>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div>
+                    <h1>My Notes</h1>
+                    <p>Capture your thoughts and ideas.</p>
+                </div>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search notes..."
+                    >
+                </div>
+            </header>
+
+            <section class="notes-info">
+                <p id="notesCount">0 notes</p>
+                <p>Saved locally</p>
+            </section>
+
+            <section class="notes-grid" id="notesGrid">
+                <!-- Notes will appear here -->
+            </section>
+
+            <div class="empty-state" id="emptyState">
+                <h2>No notes found</h2>
+                <p>Create a note to get started.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Note Modal -->
+    <div class="modal" id="noteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Create Note</h2>
+                <button class="close-btn" id="closeModalBtn">
+                    &times;
+                </button>
+            </div>
+
+            <form id="noteForm">
+                <input type="hidden" id="noteId">
+
+                <label for="noteTitle">Title</label>
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Enter note title"
+                    required
+                >
+
+                <label for="noteContent">Content</label>
+                <textarea
+                    id="noteContent"
+                    rows="7"
+                    placeholder="Write your note here..."
+                    required
+                ></textarea>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-btn">
+                        Save Note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
